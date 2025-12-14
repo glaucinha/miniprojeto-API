@@ -1,0 +1,102 @@
+Como rodar as migrations (Sequelize)
+1️⃣ O que são migrations
+
+Migrations são arquivos que descrevem como o banco de dados deve ser criado ou alterado, usando código JavaScript.
+
+👉 Em vez de criar tabelas manualmente, o Sequelize cria tudo automaticamente a partir das migrations.
+
+No seu projeto, as migrations criam as tabelas:
+
+alunos
+
+cursos
+
+matriculas
+
+2️⃣ Pré-requisitos para rodar migrations
+
+Antes de rodar as migrations, verifique:
+
+✔ Node.js instalado
+✔ Dependências instaladas (npm install)
+✔ Arquivo package.json existente
+✔ sequelize-cli instalado
+✔ Arquivo .sequelizerc configurado
+✔ Configuração do banco em src/database/config/config.js
+
+3️⃣ Abrir o terminal na pasta correta
+
+Entre na pasta raiz do projeto, onde está o package.json.
+
+
+4️⃣ Rodar as migrations
+
+Execute o comando:
+
+npx sequelize-cli db:migrate
+
+
+5️⃣ O que esse comando faz
+
+Quando você roda:
+
+npx sequelize-cli db:migrate
+
+
+O Sequelize CLI:
+
+Lê o arquivo de configuração do banco
+
+Conecta ao banco de dados
+
+Executa todas as migrations da pasta migrations
+
+Cria as tabelas definidas
+
+Cria a tabela SequelizeMeta para controle
+
+Marca quais migrations já foram executadas
+
+
+6️⃣ Mensagem de sucesso esperada
+
+No terminal, deve aparecer algo parecido com:
+
+== 20240610-create-alunos: migrating =======
+== 20240610-create-alunos: migrated (0.012s)
+
+== 20240610-create-cursos: migrating =======
+== 20240610-create-cursos: migrated (0.008s)
+
+== 20240610-create-matriculas: migrating =======
+== 20240610-create-matriculas: migrated (0.010s)
+
+
+✔ Isso indica que o banco foi criado com sucesso.
+
+
+7️⃣ Conferir se o banco foi criado
+
+Se estiver usando SQLite:
+
+Verifique o arquivo database.sqlite
+
+Abra com DB Browser for SQLite ou Beekeeper Studio
+
+Você deve ver as tabelas:
+
+alunos
+
+cursos
+
+matriculas
+
+SequelizeMeta
+
+Resumo rápido
+
+✔ Abrir terminal na raiz
+✔ Rodar npm install
+✔ Executar npx sequelize-cli db:migrate
+✔ Conferir banco criado
+
