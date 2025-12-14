@@ -1,0 +1,45 @@
+Como iniciar a aplicação
+1️⃣ Abrir o terminal na pasta correta
+Você deve estar na pasta raiz do projeto, onde existe o arquivo package.json
+package.json
+src/
+node_modules/
+
+2️⃣ Garantir que as dependências estão instaladas
+Antes de iniciar, execute:
+npm install
+
+Esse comando:
+    • Lê o package.json
+    • Instala todas as dependências automaticamente
+3️⃣ Iniciar a aplicação
+✔️ Opção 1 — Usando script npm (RECOMENDADO)
+
+No package.json deve existir:
+"scripts": {
+  "dev": "node src/app.js"
+}
+Agora rode:
+npm run dev
+✔ O servidor será iniciado
+
+Opção 2 — Usando Node diretamente
+Se preferir:
+node src/app.js
+4️⃣ Confirmar que a aplicação está rodando
+No terminal, deve aparecer algo como:
+Servidor rodando em http://localhost:3000
+5️⃣ Testar no navegador ou Postman
+Abra o navegador e acesse:
+http://localhost:3000
+
+Resposta esperada:
+{
+  "mensagem": "API de Gestão Acadêmica rodando 🚀"
+}
+
+✅ Resumo simples
+    1. Abrir terminal na pasta do projeto
+    2. Rodar npm install
+    3. Rodar npm run dev
+    4. Abrir http://localhost:3000
