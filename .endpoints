@@ -1,0 +1,114 @@
+Principais Endpoints da API (Alunos, Cursos e Matrículas)
+A API segue o padrão REST, usando os métodos HTTP:
+GET, POST, PUT e DELETE
+
+Alunos
+🔹 Criar aluno
+POST /alunos
+
+📌 Cadastra um novo aluno.
+
+🔹 Listar todos os alunos
+GET /alunos
+
+
+📌 Retorna todos os alunos cadastrados.
+
+🔹 Buscar aluno por ID
+GET /alunos/:id
+
+
+📌 Retorna um aluno específico.
+
+🔹 Atualizar aluno
+PUT /alunos/:id
+
+📌 Atualiza os dados de um aluno.
+
+Excluir aluno
+DELETE /alunos/:id
+
+
+📌 Remove um aluno do sistema.
+
+📚 Cursos
+🔹 Criar curso
+POST /cursos
+
+🔹 Listar todos os cursos
+GET /cursos
+
+🔹 Buscar curso por ID
+GET /cursos/:id
+
+🔹 Atualizar curso
+PUT /cursos/:id
+
+🔹 Excluir curso
+DELETE /cursos/:id
+
+
+📝 Matrículas (Relacionamento N:N)
+🔹 Criar matrícula
+POST /matriculas
+
+📥 Body:
+
+{
+  "alunoId": 1,
+  "cursoId": 2,
+  "dataMatricula": "2025-01-10"
+}
+
+
+📌 Matricula um aluno em um curso.
+
+🔹 Listar todas as matrículas
+GET /matriculas
+
+🔹 Listar cursos de um aluno
+GET /alunos/:id/cursos
+
+
+📌 Retorna todos os cursos em que o aluno está matriculado.
+
+🔹 Listar alunos de um curso
+GET /cursos/:id/alunos
+
+
+📌 Retorna todos os alunos matriculados em um curso.
+
+🔹 Cancelar matrícula
+DELETE /matriculas/:id
+
+
+📌 Remove o vínculo entre aluno e curso.
+
+🧪 Endpoint de teste (opcional)
+GET /
+
+
+Resposta:
+
+{
+  "mensagem": "API de Gestão Acadêmica rodando 🚀"
+}
+
+✅ Conclusão
+A API disponibiliza endpoints REST para gerenciamento de alunos, cursos e matrículas, permitindo operações completas de cadastro, consulta, atualização e exclusão, além do controle do relacionamento muitos-para-muitos entre alunos e cursos.
+
+📌 Resumo Geral (Tabela)
+Recurso	Método	Endpoint
+Aluno	POST	/alunos
+Aluno	GET	/alunos
+Aluno	GET	/alunos/:id
+Aluno	PUT	/alunos/:id
+Aluno	DELETE	/alunos/:id
+Curso	POST	/cursos
+Curso	GET	/cursos
+Curso	GET	/cursos/:id
+Curso	PUT	/cursos/:id
+Curso	DELETE	/cursos/:id
+Matrícula	POST	/matriculas
+Matrícula	GET	/matriculas
+Matrícula	DELETE	/matriculas/:id
